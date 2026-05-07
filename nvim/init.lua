@@ -24,10 +24,19 @@ vim.pack.add(
 		{ src = "https://github.com/lewis6991/gitsigns.nvim", version = "v2.1.0" }
 	}
 )
+vim.pack.add(
+	{
+		{ src = "https://github.com/tpope/vim-fugitive", version = "v3.7" }
+	}
+)
 
 -- Misc plugins
 require("mason").setup()
-require("lualine").setup()
+require("lualine").setup({
+	options = {
+		icons_enabled = false
+	}
+})
 require("gitsigns").setup()
 
 -- Options
@@ -49,6 +58,14 @@ vim.api.nvim_create_autocmd("TextYankPost",
 	}
 )
 
+-- Treesitter
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("TS", {clear = true}),
+	callback = function(ev)
+		pcall(vim.treesitter.start, ev.buf)
+	end
+})
+
 -- Search
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -58,6 +75,7 @@ vim.o.incsearch = true
 -- Autocomplete
 vim.o.autocomplete = true
 vim.o.completeopt = "menu,menuone,noinsert,popup"
+local lsp_attach_config_group = vim.api.nvim_create_augroup("lsp_attach_config_group", {clear = true})
 local enable_lsp_autocomplete = function(args)
 	local client_id = args.data.client_id
 	if not client_id then
@@ -71,9 +89,11 @@ local enable_lsp_autocomplete = function(args)
 	end
 end
 vim.api.nvim_create_autocmd("LspAttach", {
-	group = vim.api.nvim_create_augroup("lsp_completion", { clear = true }),
+	group = lsp_attach_config_group,
 	callback = enable_lsp_autocomplete
 })
 
 -- LSP
 vim.lsp.enable({ "lua_ls" })
+
+
