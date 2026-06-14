@@ -1,5 +1,20 @@
 {
   "plugins": {
+    "base46": {
+      "rev": "cb8a1257bbc2640f6e7415a01219b34d3efd1494",
+      "src": "https://github.com/AvengeMedia/base46",
+      "version": "'cb8a1257bbc2640f6e7415a01219b34d3efd1494'"
+    },
+    "blink.cmp": {
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "'v1.10.2'"
+    },
+    "conform.nvim": {
+      "rev": "3543d000dafbc41cc7761d860cfdb24e82154f75",
+      "src": "https://github.com/stevearc/conform.nvim",
+      "version": "'v9.1.0'"
+    },
     "gitsigns.nvim": {
       "rev": "a462f416e2ce4744531c6256252dee99a7d34a83",
       "src": "https://github.com/lewis6991/gitsigns.nvim",
@@ -25,10 +40,20 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'4916d6592ede8c07973490d9322f187e07dfefac'"
     },
-    "nvim-web-devicons": {
-      "rev": "c72328a5494b4502947a022fe69c0c47e53b6aa6",
-      "src": "https://github.com/nvim-tree/nvim-web-devicons",
-      "version": "'c72328a5494b4502947a022fe69c0c47e53b6aa6'"
+    "oil.nvim": {
+      "rev": "17c0a8faaf48298a0c0cfb0d757c0eaee4ff7a32",
+      "src": "https://github.com/stevearc/oil.nvim",
+      "version": "'v2.16.0'"
+    },
+    "vim-fugitive": {
+      "rev": "96c1009fcf8ce60161cc938d149dd5a66d570756",
+      "src": "https://github.com/tpope/vim-fugitive",
+      "version": "'v3.7'"
+    },
+    "which-key.nvim": {
+      "rev": "fcbf4eea17cb299c02557d576f0d568878e354a4",
+      "src": "https://github.com/folke/which-key.nvim",
+      "version": "'v3.17.0'"
     }
   }
 }
