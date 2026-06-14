@@ -45,3 +45,8 @@ if [ -x /usr/bin/dircolors ]; then
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
 fi
+
+# CTRL + arrow to move words
+# They key value might be different depending on terminal eumlator AFAIK - use CTRL-V + the key to check for exact code sent by the emulator
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
